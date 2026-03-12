@@ -1,0 +1,150 @@
+/* =========================================
+   PANNELLO DI CONTROLLO (Variabili)
+   ========================================= */
+:root {
+    --colore-sfondo-bar: #ffffff;    /* Bianco pulito per la barra */
+    --colore-testo: #444444;         /* Grigio antracite morbido */
+    --colore-accento: #b5835a;       /* Un color bronzo/fango elegante per l'hover */
+    --colore-popup-bg: #ffffff;      /* Sfondo popup */
+    --altezza-logo: 70px;            /* Logo un po' più grande e visibile */
+    --font-principale: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; /* Font moderno */
+}
+
+/* Reset Generale */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-principale);
+    background-color: #fdfdfd; /* Un bianco sporco per far risaltare la biancheria */
+    color: var(--colore-testo);
+}
+
+/* --- TOP BAR --- */
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;                 /* Più spazio ai lati */
+    height: 100px;                   /* Altezza fissa per dare respiro */
+    background-color: var(--colore-sfondo-bar);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* Un'ombra leggerissima per dare eleganza */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* --- LOGO --- */
+.logo-img {
+    height: var(--altezza-logo);
+    transition: transform 0.3s ease; /* Effetto zoom leggero al passaggio */
+}
+.logo-img:hover {
+    transform: scale(1.05);
+}
+
+/* --- MENU CENTRALE --- */
+.menu-list {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.menu-item {
+    position: relative;
+    padding: 10px 0;
+}
+
+.menu-item a {
+    text-decoration: none;
+    color: var(--colore-testo);
+    font-size: 0.95rem;             /* Testo leggermente più piccolo per eleganza */
+    font-weight: 500;
+    letter-spacing: 0.5px;          /* Spaziatura tra lettere (molto chic) */
+    text-transform: uppercase;      /* Tutto maiuscolo per un tocco professionale */
+    transition: color 0.3s ease;
+}
+
+/* Effetto Sottolineatura che appare al passaggio */
+.menu-item a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 1.5px;
+    background: var(--colore-accento);
+    transition: width 0.3s;
+    margin-top: 5px;
+}
+
+.menu-item a:hover {
+    color: var(--colore-accento);
+}
+
+.menu-item a:hover::after {
+    width: 100%;
+}
+
+/* --- POPUP SOTTOCATEGORIE --- */
+.popup-sottocategorie {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);    /* Centra il popup rispetto alla voce */
+    background-color: var(--colore-popup-bg);
+    min-width: 220px;
+    padding: 20px;
+    border-top: 3px solid var(--colore-accento); /* Una linea di colore sopra il popup */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    text-align: center;
+    border-radius: 0 0 8px 8px;     /* Arrotonda solo il basso */
+}
+
+/* --- STILE LINK SOTTOCATEGORIE --- */
+
+.link-sottocategoria {
+    display: block;          /* Fa sì che ogni link vada a capo occupando tutta la riga */
+    text-decoration: none;   /* Toglie la sottolineatura standard */
+    color: var(--colore-testo); /* Usa il grigio che abbiamo scelto sopra */
+    padding: 8px 0;          /* Distanzia un po' i link tra loro */
+    font-size: 0.9rem;       /* Leggermente più piccolo del menu principale */
+    transition: all 0.2s;    /* Rende il passaggio del mouse morbidissimo */
+    border-bottom: 1px solid transparent; /* Prepara un bordino invisibile */
+}
+
+.link-sottocategoria:hover {
+    color: var(--colore-accento);    /* Cambia colore al passaggio */
+    padding-left: 5px;               /* Piccolo effetto movimento verso destra */
+    background-color: #fefefe;       /* Cambia leggermente lo sfondo della riga */
+}
+
+/* Animazione del popup */
+.menu-item:hover .popup-sottocategorie {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateX(-50%) translateY(10px); }
+    to { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+/* --- CHI SIAMO (DESTRA) --- */
+.btn-chi-siamo {
+    text-decoration: none;
+    color: var(--colore-testo);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 10px 0;
+    border: none;                   /* Tolto il riquadro come richiesto */
+    transition: color 0.3s;
+}
+
+.btn-chi-siamo:hover {
+    color: var(--colore-accento);   /* Cambia solo colore al passaggio */
+}
