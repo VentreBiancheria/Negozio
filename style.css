@@ -6,7 +6,11 @@
     --colore-testo: #444444;         /* Grigio antracite morbido */
     --colore-accento: #b5835a;       /* Un color bronzo/fango elegante per l'hover */
     --colore-popup-bg: #ffffff;      /* Sfondo popup */
-    --altezza-logo: 70px;            /* Logo un po' più grande e visibile ciao*/
+    --colore-sfondo-footer: #2b2b2b; /* Grigio scuro/antracite per il fondo */
+    --colore-testo-footer: #f1f1f1;  /* Bianco morbido per il testo */
+    --colore-accento-footer: #b5835a;/* Lo stesso color bronzo per i dettagli */
+    --altezza-logo: 95px;            /* Logo un po' più grande e visibile*/
+    --grandezza-testo-menu: 1.0rem;  /* Grandezza del testo del menu in alto */
     --font-principale: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; /* Font moderno */
 }
 
@@ -19,8 +23,15 @@
 
 body {
     font-family: var(--font-principale);
-    background-color: #fdfdfd; /* Un bianco sporco per far risaltare la biancheria */
+    background-color: #fdfdfd; 
     color: var(--colore-testo);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Il sito deve essere alto almeno il 100% dello schermo (View Height) */
+}
+
+main {
+    flex-grow: 1; 
 }
 
 /* --- TOP BAR --- */
@@ -29,7 +40,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 0 50px;                 /* Più spazio ai lati */
-    height: 100px;                   /* Altezza fissa per dare respiro */
+    height: 110px;                   /* Altezza fissa per dare respiro */
     background-color: var(--colore-sfondo-bar);
     box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* Un'ombra leggerissima per dare eleganza */
     position: sticky;
@@ -50,22 +61,27 @@ body {
 .menu-list {
     list-style: none;
     display: flex;
+    align-items: center;
     gap: 30px;
 }
 
 .menu-item {
     position: relative;
-    padding: 10px 0;
+    display: flex;
+    align-items: center; /* Centra il testo in verticale al millimetro */
+    height: var(--altezza-logo); /* Il righello ora è qui */
 }
 
+/* 2. Il link torna normale, così la linea riappare sotto e non di lato */
 .menu-item a {
     text-decoration: none;
     color: var(--colore-testo);
-    font-size: 0.95rem;             /* Testo leggermente più piccolo per eleganza */
+    font-size: var(--grandezza-testo-menu);
     font-weight: 500;
-    letter-spacing: 0.5px;          /* Spaziatura tra lettere (molto chic) */
-    text-transform: uppercase;      /* Tutto maiuscolo per un tocco professionale */
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
     transition: color 0.3s ease;
+    display: block; /* Comando fondamentale per mandare a capo la linea! */
 }
 
 /* Effetto Sottolineatura che appare al passaggio */
@@ -132,19 +148,188 @@ body {
     to { opacity: 1; transform: translateX(-50%) translateY(0); }
 }
 
+.info-destra {
+    display: flex;
+    align-items: center;
+    height: var(--altezza-logo);
+}
+
 /* --- CHI SIAMO (DESTRA) --- */
 .btn-chi-siamo {
     text-decoration: none;
     color: var(--colore-testo);
-    font-size: 0.9rem;
+    font-size: var(--grandezza-testo-menu); 
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
-    padding: 10px 0;
-    border: none;                   /* Tolto il riquadro come richiesto */
     transition: color 0.3s;
+    display: block;
 }
 
 .btn-chi-siamo:hover {
     color: var(--colore-accento);   /* Cambia solo colore al passaggio */
+}
+
+.btn-chi-siamo::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 1.5px;                   /* Stesso spessore del menu */
+    background: var(--colore-accento); /* Usa il color bronzo */
+    transition: width 0.3s;
+    margin-top: 5px;                 /* Stesso spazio che spinge la linea in basso */
+}
+
+.btn-chi-siamo:hover::after {
+    width: 100%;
+}
+
+/* =========================================
+   PAGINA "CHI SIAMO"
+   ========================================= */
+
+.pagina-chi-siamo {
+    padding: 60px 20px;           /* Spazio sopra e sotto per far respirare la pagina */
+    background-color: #fdfdfd;    /* Sfondo morbidissimo */
+}
+
+/* La scatola bianca centrale che contiene il testo */
+.storia-container {
+    max-width: 800px;             /* Non troppo largo, altrimenti l'occhio si stanca a leggere */
+    margin: 0 auto;               /* Centra la scatola nello schermo */
+    background-color: #ffffff;
+    padding: 60px;                /* Spazio tra il testo e i bordi della scatola */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03); /* Un'ombra impercettibile per dare rilievo */
+    border-radius: 4px;
+}
+
+/* Titolo principale */
+.titolo-storia {
+    text-align: center;
+    color: var(--colore-accento); /* Usa il color bronzo che abbiamo impostato su in cima */
+    font-size: 2.8rem;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+}
+
+/* Sottotitoli (Le origini, Oggi) */
+.sottotitolo-storia {
+    color: var(--colore-testo);
+    font-size: 1.8rem;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+/* Stile per i testi dei paragrafi */
+.storia-container p {
+    font-size: 1.05rem;
+    line-height: 1.8;             /* Spazio tra le righe per facilitare la lettura */
+    margin-bottom: 20px;
+    color: #555;                  /* Un grigio leggermente più morbido per la lettura lunga */
+    text-align: justify;          /* Allinea il testo sia a destra che a sinistra */
+}
+
+/* Stile speciale per l'introduzione */
+.intro-storia {
+    font-size: 1.15rem !important; /* Leggermente più grande del resto */
+    font-style: italic;            /* Corsivo per dare un tono poetico/storico */
+    text-align: center !important; /* L'intro la centriamo */
+    color: #666;
+}
+
+/* La lineetta decorativa per separare le sezioni */
+.divisorio-elegante {
+    width: 60px;
+    height: 2px;
+    background-color: var(--colore-accento);
+    margin: 40px auto;            /* Si posiziona automaticamente al centro */
+}
+
+/* =========================================
+   FOOTER (Parte finale del sito)
+   ========================================= */
+
+.main-footer {
+    background-color: var(--colore-sfondo-footer);
+    color: var(--colore-testo-footer);
+    padding: 20px 50px 10px 50px; /* Spazi interni molto ridotti */
+    margin-top: auto;             /* Aiuta a spingere il footer a fine pagina */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center; /* Centra le due colonne in mezzo allo schermo */
+    gap: 80px;               /* Distanza elegante tra Contatti e Orari */
+    flex-wrap: wrap;
+    max-width: 900px;        /* Evita che le colonne si allontanino troppo sui monitor grandi */
+    margin: 0 auto 20px auto;/* auto a destra e sinistra centra il blocco intero */
+}
+
+/* Stile per ogni singola colonna */
+.footer-col {
+    flex: 0 1 350px;         /* Le colonne saranno larghe al massimo 350px */
+}
+
+.footer-col h3 {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+    color: var(--colore-accento-footer);
+}
+
+.footer-col p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.footer-col:last-child {
+    text-align: left;
+}
+
+/* Stile per la riga finale del Copyright */
+.footer-bottom {
+    text-align: center;
+    font-size: 0.8rem;
+    border-top: 1px solid #444;     /* Riga separatrice sopra il copyright */
+    padding-top: 20px;
+    color: #999;                    /* Grigio più chiaro per non distrarre */
+}
+
+/* Allarghiamo un po' le colonne per evitare che l'indirizzo vada a capo */
+.footer-col {
+    flex: 0 1 400px; 
+}
+
+/* La struttura base per entrambe le liste (Contatti e Orari) */
+.lista-allineata {
+    list-style: none;
+    max-width: 380px;
+}
+
+/* LA MAGIA: Impostiamo un'altezza fissa per TUTTE le righe! */
+.lista-allineata li {
+    font-size: 0.9rem;
+    padding: 8px 0;
+    min-height: 45px;        /* Tutte le righe saranno alte almeno 45 pixel */
+    display: flex;
+    align-items: center;     /* Centra il testo in altezza nella sua riga */
+}
+
+/* Stile per la colonna Contatti */
+.riga-contatti {
+    border-bottom: 1px solid #444;  /* Sostituito "transparent" con il colore della linea visibile! */
+    width: 100%;                    /* Assicura che la linea sia lunga quanto quella degli orari */
+}
+
+/* Stile per la colonna Orari */
+.riga-orari {
+    justify-content: space-between; /* Giorni a sinistra, ore a destra */
+    border-bottom: 1px solid #444;  /* Riga visibile */
+    width: 100%;
+}
+
+.lista-allineata li:last-child {
+    border-bottom: none; /* "none" significa "nessuno", quindi fa sparire l'ultima riga */
 }
