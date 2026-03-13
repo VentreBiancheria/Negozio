@@ -9,7 +9,7 @@
     --colore-sfondo-footer: #2b2b2b; /* Grigio scuro/antracite per il fondo */
     --colore-testo-footer: #f1f1f1;  /* Bianco morbido per il testo */
     --colore-accento-footer: #b5835a;/* Lo stesso color bronzo per i dettagli */
-    --altezza-logo: 95px;            /* Logo un po' più grande e visibile*/
+    --altezza-logo: 90px;            /* Logo un po' più grande e visibile*/
     --grandezza-testo-menu: 1.0rem;  /* Grandezza del testo del menu in alto */
     --font-principale: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; /* Font moderno */
 }
@@ -39,7 +39,7 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 50px;                 /* Più spazio ai lati */
+    padding: 0 30px;                 /* Più spazio ai lati */
     height: 110px;                   /* Altezza fissa per dare respiro */
     background-color: var(--colore-sfondo-bar);
     box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* Un'ombra leggerissima per dare eleganza */
@@ -112,7 +112,7 @@ main {
     transform: translateX(-50%);    /* Centra il popup rispetto alla voce */
     background-color: var(--colore-popup-bg);
     min-width: 220px;
-    padding: 20px;
+    padding: 10px;
     border-top: 3px solid var(--colore-accento); /* Una linea di colore sopra il popup */
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     text-align: center;
@@ -189,7 +189,7 @@ main {
    ========================================= */
 
 .pagina-chi-siamo {
-    padding: 60px 20px;           /* Spazio sopra e sotto per far respirare la pagina */
+    padding: 20px 10px;           /* Spazio sopra e sotto per far respirare la pagina */
     background-color: #fdfdfd;    /* Sfondo morbidissimo */
 }
 
@@ -198,7 +198,7 @@ main {
     max-width: 800px;             /* Non troppo largo, altrimenti l'occhio si stanca a leggere */
     margin: 0 auto;               /* Centra la scatola nello schermo */
     background-color: #ffffff;
-    padding: 60px;                /* Spazio tra il testo e i bordi della scatola */
+    padding: 20px 50px;                /* Spazio tra il testo e i bordi della scatola */
     box-shadow: 0 10px 30px rgba(0,0,0,0.03); /* Un'ombra impercettibile per dare rilievo */
     border-radius: 4px;
 }
@@ -208,7 +208,7 @@ main {
     text-align: center;
     color: var(--colore-accento); /* Usa il color bronzo che abbiamo impostato su in cima */
     font-size: 2.8rem;
-    margin-bottom: 25px;
+    margin-bottom: 15px;
     letter-spacing: 1px;
 }
 
@@ -216,15 +216,15 @@ main {
 .sottotitolo-storia {
     color: var(--colore-testo);
     font-size: 1.8rem;
-    margin-top: 30px;
-    margin-bottom: 15px;
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 
 /* Stile per i testi dei paragrafi */
 .storia-container p {
     font-size: 1.05rem;
     line-height: 1.8;             /* Spazio tra le righe per facilitare la lettura */
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     color: #555;                  /* Un grigio leggermente più morbido per la lettura lunga */
     text-align: justify;          /* Allinea il testo sia a destra che a sinistra */
 }
@@ -239,12 +239,42 @@ main {
 
 /* La lineetta decorativa per separare le sezioni */
 .divisorio-elegante {
-    width: 60px;
+    width: 100px;
     height: 2px;
     background-color: var(--colore-accento);
-    margin: 40px auto;            /* Si posiziona automaticamente al centro */
+    margin: 30px auto;            /* Si posiziona automaticamente al centro */
 }
 
+/* =========================================
+   SEZIONE MAPPA
+   ========================================= */
+.sezione-mappa {
+    max-width: 800px;         /* Larga esattamente quanto il testo della storia */
+    margin: 40px auto;        /* 60px di spazio sopra e sotto, "auto" per centrarla */
+    text-align: center;       /* Centra i titoli */
+    padding: 0px 20px;          /* Evita che tocchi i bordi sui cellulari */
+}
+
+.titolo-mappa {
+    color: var(--colore-accento); /* Il tuo color bronzo elegante */
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+}
+
+.sottotitolo-mappa {
+    color: #666;
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+}
+
+/* La cornice della mappa */
+.contenitore-mappa {
+    width: 100%;
+    border-radius: 8px;       /* Arrotonda gli angoli della mappa */
+    overflow: hidden;         /* "Taglia" gli spigoli della mappa che escono dagli angoli arrotondati */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* Un'ombra morbida ed elegante */
+    background-color: #eee;   /* Colore di fondo mentre la mappa carica */
+}
 /* =========================================
    FOOTER (Parte finale del sito)
    ========================================= */

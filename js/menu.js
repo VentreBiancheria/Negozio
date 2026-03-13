@@ -16,7 +16,6 @@ document.getElementById("header-container").innerHTML = `
                 <li class="menu-item">
                     <a href="#">Biancheria da letto</a>
                     <div class="popup-sottocategorie">
-                        <span class="label-popup">SCOPRI</span>
                         <a href="#" class="link-sottocategoria">Lenzuola</a>
                         <a href="#" class="link-sottocategoria">Copriletto</a>
                         <a href="#" class="link-sottocategoria">Piumoni</a>
