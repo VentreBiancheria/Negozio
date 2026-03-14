@@ -10,7 +10,7 @@ document.getElementById("footer-container").innerHTML = `
                 <h3>Contatti</h3>
                 <ul class="lista-allineata">
                     <li class="riga-contatti">
-                        <span><strong>Indirizzo:</strong> Via Duomo, 20, 84121 Salerno SA</span>
+                        <span><strong>Indirizzo:</strong> Via Duomo, 18/20, 84121 Salerno SA</span>
                     </li>
                     <li class="riga-contatti">
                         <span><strong>Telefono:</strong> 089 228601</span>

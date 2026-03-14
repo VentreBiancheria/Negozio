@@ -2,13 +2,14 @@
    PANNELLO DI CONTROLLO (Variabili)
    ========================================= */
 :root {
-    --colore-sfondo-bar: #ffffff;    /* Bianco pulito per la barra */
+    --colore-sfondo-bar: #23512C;    /* Bianco pulito per la barra */
     --colore-testo: #444444;         /* Grigio antracite morbido */
-    --colore-accento: #b5835a;       /* Un color bronzo/fango elegante per l'hover */
-    --colore-popup-bg: #ffffff;      /* Sfondo popup */
+    --colore-testo2: #C0A664;         /* Oro del logo */
+    --colore-accento: #C0A664;       /* Un color bronzo/fango elegante per l'hover */
+    --colore-popup-bg: #FAF8F3;      /* Sfondo popup */
     --colore-sfondo-footer: #2b2b2b; /* Grigio scuro/antracite per il fondo */
     --colore-testo-footer: #f1f1f1;  /* Bianco morbido per il testo */
-    --colore-accento-footer: #b5835a;/* Lo stesso color bronzo per i dettagli */
+    --colore-accento-footer: #C0A664;/* Lo stesso color bronzo per i dettagli */
     --altezza-logo: 90px;            /* Logo un po' più grande e visibile*/
     --grandezza-testo-menu: 1.0rem;  /* Grandezza del testo del menu in alto */
     --font-principale: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; /* Font moderno */
@@ -23,7 +24,7 @@
 
 body {
     font-family: var(--font-principale);
-    background-color: #fdfdfd; 
+    background-color: #FAF8F3; 
     color: var(--colore-testo);
     display: flex;
     flex-direction: column;
@@ -75,7 +76,7 @@ main {
 /* 2. Il link torna normale, così la linea riappare sotto e non di lato */
 .menu-item a {
     text-decoration: none;
-    color: var(--colore-testo);
+    color: var(--colore-popup-bg);
     font-size: var(--grandezza-testo-menu);
     font-weight: 500;
     letter-spacing: 0.5px;
@@ -110,7 +111,7 @@ main {
     top: 100%;
     left: 50%;
     transform: translateX(-50%);    /* Centra il popup rispetto alla voce */
-    background-color: var(--colore-popup-bg);
+    background-color: var(--colore-sfondo-bar);
     min-width: 220px;
     padding: 10px;
     border-top: 3px solid var(--colore-accento); /* Una linea di colore sopra il popup */
@@ -134,7 +135,7 @@ main {
 .link-sottocategoria:hover {
     color: var(--colore-accento);    /* Cambia colore al passaggio */
     padding-left: 5px;               /* Piccolo effetto movimento verso destra */
-    background-color: #fefefe;       /* Cambia leggermente lo sfondo della riga */
+    background-color: #FAF8F3;       /* Cambia leggermente lo sfondo della riga */
 }
 
 /* Animazione del popup */
@@ -157,7 +158,7 @@ main {
 /* --- CHI SIAMO (DESTRA) --- */
 .btn-chi-siamo {
     text-decoration: none;
-    color: var(--colore-testo);
+    color: var(--colore-popup-bg);
     font-size: var(--grandezza-testo-menu); 
     font-weight: 600;
     text-transform: uppercase;
