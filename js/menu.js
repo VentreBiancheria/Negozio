@@ -62,18 +62,58 @@ document.getElementById("header-container").innerHTML = `
                 <li class="menu-item">
                     <a href="#">Pigiameria</a>
                     <div class="popup-sottocategorie">
-                        <a href="#" class="link-sottocategoria"><strong>Uomo</strong> - Pigiami, Vestaglie e giacche da camera</a>
-                        <a href="#" class="link-sottocategoria"><strong>Donna</strong> - Pigiami e camicie da notte, Vestaglie</a>
-                        <a href="#" class="link-sottocategoria"><strong>Bambino</strong> - Pigiami, Vestaglie</a>
+                        <div class="has-submenu">
+                            <a href="#" class="link-sottocategoria"><strong>Uomo</strong> <span class="freccia">&#9654;</span></a>
+                            <div class="popup-sotto-sottocategorie">
+                                <a href="#" class="link-sottocategoria">Pigiami</a>
+                                <a href="#" class="link-sottocategoria">Vestaglie e giacche da camera</a>
+                            </div>
+                        </div>
+                        <div class="has-submenu">
+                            <a href="#" class="link-sottocategoria"><strong>Donna</strong> <span class="freccia">&#9654;</span></a>
+                            <div class="popup-sotto-sottocategorie">
+                                <a href="#" class="link-sottocategoria">Pigiami e camicie da notte</a>
+                                <a href="#" class="link-sottocategoria">Vestaglie</a>
+                            </div>
+                        </div>
+                        <div class="has-submenu">
+                            <a href="#" class="link-sottocategoria"><strong>Bambino</strong> <span class="freccia">&#9654;</span></a>
+                            <div class="popup-sotto-sottocategorie">
+                                <a href="#" class="link-sottocategoria">Pigiami</a>
+                                <a href="#" class="link-sottocategoria">Vestaglie</a>
+                            </div>
+                        </div>
                     </div>
                 </li>
 
                 <li class="menu-item">
                     <a href="#">Intimo</a>
                     <div class="popup-sottocategorie">
-                        <a href="#" class="link-sottocategoria"><strong>Uomo</strong> - Slip, Boxer, Maglieria intima, Calze</a>
-                        <a href="#" class="link-sottocategoria"><strong>Donna</strong> - Reggiseni, Slip, Maglieria intima, Calze</a>
-                        <a href="#" class="link-sottocategoria"><strong>Bambino</strong> - Maglieria intima, Calze</a>
+                        <div class="has-submenu">
+                            <a href="#" class="link-sottocategoria"><strong>Uomo</strong> <span class="freccia">&#9654;</span></a>
+                            <div class="popup-sotto-sottocategorie">
+                                <a href="#" class="link-sottocategoria">Slip</a>
+                                <a href="#" class="link-sottocategoria">Boxer</a>
+                                <a href="#" class="link-sottocategoria">Maglieria intima</a>
+                                <a href="#" class="link-sottocategoria">Calze</a>
+                            </div>
+                        </div>
+                        <div class="has-submenu">
+                            <a href="#" class="link-sottocategoria"><strong>Donna</strong> <span class="freccia">&#9654;</span></a>
+                            <div class="popup-sotto-sottocategorie">
+                                <a href="#" class="link-sottocategoria">Reggiseni</a>
+                                <a href="#" class="link-sottocategoria">Slip</a>
+                                <a href="#" class="link-sottocategoria">Maglieria intima</a>
+                                <a href="#" class="link-sottocategoria">Calze</a>
+                            </div>
+                        </div>
+                        <div class="has-submenu">
+                            <a href="#" class="link-sottocategoria"><strong>Bambino</strong> <span class="freccia">&#9654;</span></a>
+                            <div class="popup-sotto-sottocategorie">
+                                <a href="#" class="link-sottocategoria">Maglieria intima</a>
+                                <a href="#" class="link-sottocategoria">Calze</a>
+                            </div>
+                        </div>
                     </div>
                 </li>
             </ul>
