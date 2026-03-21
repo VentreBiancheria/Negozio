@@ -561,3 +561,104 @@ main {
     border-bottom: none;
     /* "none" significa "nessuno", quindi fa sparire l'ultima riga */
 }
+
+/* HERO */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 90vh;
+  background-image: url('img/hero.jpg');
+  background-size: cover;
+  background-position: center 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  color: white;
+}
+
+.hero-content h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+}
+
+.hero-btn {
+  padding: 14px 36px;
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.hero-btn:hover {
+  background-color: white;
+  color: #333;
+}
+
+/* STRISCIA VALORI */
+.valori {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0;
+  padding: 80px 80px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.valore {
+  flex: 1;
+  max-width: 320px;
+  padding: 0 60px;
+  border-right: 1px solid #e0d8cc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.valore:last-child {
+  border-right: none;
+}
+
+.valore-icona {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 20px;
+  color: #2c4a2e;
+}
+
+.valore h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+  color: #2c4a2e;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.valore p {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.8;
+}
+

@@ -17,12 +17,12 @@ document.getElementById("footer-container").innerHTML = `
                     </li>
                     <li class="riga-contatti">
                         <a href="https://www.instagram.com/ventre.biancheria?igsh=MWc1YW5rcnR5cmxkbg==" target="_blank" style="color: var(--colore-accento-footer); text-decoration: none; font-weight: bold;">
-                            Seguici su Instagram
+                            <i class="fa-brands fa-instagram" style="margin-right: 8px;"></i>Seguici su Instagram
                         </a>
                     </li>
                     <li class="riga-contatti">
                         <a href="https://www.facebook.com/p/Ventre-biancheria-100066561880029/" target="_blank" style="color: var(--colore-accento-footer); text-decoration: none; font-weight: bold;">
-                            Seguici su Facebook
+                            <i class="fa-brands fa-facebook" style="margin-right: 8px;"></i>Seguici su Facebook
                         </a>
                     </li>
                 </ul>
