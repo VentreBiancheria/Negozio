@@ -20,6 +20,11 @@ document.getElementById("footer-container").innerHTML = `
                             Seguici su Instagram
                         </a>
                     </li>
+                    <li class="riga-contatti">
+                        <a href="https://www.facebook.com/p/Ventre-biancheria-100066561880029/" target="_blank" style="color: var(--colore-accento-footer); text-decoration: none; font-weight: bold;">
+                            Seguici su Facebook
+                        </a>
+                    </li>
                 </ul>
             </div>
 
