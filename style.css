@@ -3,35 +3,21 @@
    ========================================= */
 :root {
     --background-color: #eeeeee;
-    /* Colore di sfondo del body */
     --colore-sfondo-bar: #23512C;
-    /* Bianco pulito per la barra */
     --colore-testo: #000000;
-    /* Grigio antracite morbido */
     --colore-testo2: #C0A664;
-    /* Oro del logo */
     --colore-accento: #C0A664;
-    /* Un color bronzo/fango elegante per l'hover */
     --colore-popup-bg: #ffffff;
-    /* Sfondo popup */
     --colore-sfondo-footer: #2b2b2b;
-    /* Grigio scuro/antracite per il fondo */
     --colore-testo-footer: #ffffff;
-    /* Bianco morbido per il testo */
     --colore-accento-footer: #C0A664;
-    /* Lo stesso color bronzo per i dettagli */
     --colore-sfondo-menu-tendina: #ffffff;
-    /* Colore personalizzabile per lo sfondo dei menu a tendina */
     --altezza-logo: 90px;
-    /* Logo un po' più grande e visibile*/
     --grandezza-testo-menu: 1.0rem;
-    /* Grandezza del testo del menu in alto */
     --font-principale: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    /* Font moderno */
     --font-logo: 'Tangerine', cursive;
 }
 
-/* Reset Generale */
 * {
     margin: 0;
     padding: 0;
@@ -45,42 +31,34 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    /* Il sito deve essere alto almeno il 100% dello schermo (View Height) */
 }
 
 main {
     flex-grow: 1;
 }
 
-/* --- TOP BAR --- */
 .top-bar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 30px;
-    /* Più spazio ai lati */
     height: 110px;
-    /* Altezza fissa per dare respiro */
     background-color: var(--colore-sfondo-bar);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-    /* Un'ombra leggerissima per dare eleganza */
     position: sticky;
     top: 0;
     z-index: 1000;
 }
 
-/* --- LOGO --- */
 .logo-img {
     height: var(--altezza-logo);
     transition: transform 0.3s ease;
-    /* Effetto zoom leggero al passaggio */
 }
 
 .logo-img:hover {
     transform: scale(1.05);
 }
 
-/* --- MENU CENTRALE --- */
 .menu-list {
     list-style: none;
     display: flex;
@@ -92,12 +70,9 @@ main {
     position: relative;
     display: flex;
     align-items: center;
-    /* Centra il testo in verticale al millimetro */
     height: var(--altezza-logo);
-    /* Il righello ora è qui */
 }
 
-/* 2. Il link torna normale, così la linea riappare sotto e non di lato */
 .menu-item>a {
     text-decoration: none;
     color: var(--colore-popup-bg);
@@ -107,10 +82,8 @@ main {
     text-transform: uppercase;
     transition: color 0.3s ease;
     display: block;
-    /* Comando fondamentale per mandare a capo la linea! */
 }
 
-/* Effetto Sottolineatura che appare al passaggio */
 .menu-item>a::after {
     content: '';
     display: block;
@@ -129,59 +102,46 @@ main {
     width: 100%;
 }
 
-/* --- POPUP SOTTOCATEGORIE --- */
 .popup-sottocategorie {
     display: none;
     position: absolute;
     top: calc(100% - 10px);
-    /* Solleva il popup per avvicinarlo alla scritta */
     left: 50%;
     transform: translateX(-50%);
-    /* Centra il popup rispetto alla voce */
     background-color: var(--colore-sfondo-menu-tendina);
     min-width: 200px;
     padding: 10px;
     border-top: 3px solid var(--colore-accento);
-    /* Una linea di colore sopra il popup */
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     text-align: left;
     border-radius: 0 8px 8px 8px;
-    /* Arrotonda solo il basso */
 }
-
-/* --- STILE LINK SOTTOCATEGORIE --- */
 
 .link-sottocategoria {
     display: block;
     position: relative;
-    /* Per posizionamento della linea */
     text-decoration: none;
     color: var(--colore-testo);
     padding: 8px 15px;
-    /* Distanzia i link e definisce margini interni uniformi */
     font-size: var(--grandezza-testo-menu);
     text-transform: uppercase;
     letter-spacing: 0.5px;
     font-weight: 480;
     transition: color 0.2s;
     text-align: left;
-    /* Allinea il testo a sinistra per tutto il sotto menu */
 }
 
-/* Base della linea orizzontale invisibile */
 .link-sottocategoria::after {
     content: '';
     position: absolute;
     bottom: 2px;
     left: 15px;
-    /* Allineato esattamente col testo grazie al padding */
     width: 0;
     height: 1.5px;
     background: var(--colore-accento);
     transition: width 0.3s ease;
 }
 
-/* Sovrascrive i tag strong rimasti nell'HTML per non farli risultare in grassetto */
 .link-sottocategoria strong {
     font-weight: 400;
 }
@@ -189,16 +149,13 @@ main {
 .link-sottocategoria:hover,
 .has-submenu:hover>.link-sottocategoria {
     color: var(--colore-accento);
-    /* Nessun cambio di sfondo o padding che sciatta la linea */
 }
 
-/* Riempiamo la linea sotto al passaggio (la linea non dà fastidio ai sottomenu perchè è posizionata assoluta) */
 .link-sottocategoria:hover::after,
 .has-submenu:hover>.link-sottocategoria::after {
     width: calc(100% - 30px);
 }
 
-/* Animazione del popup */
 .menu-item:hover .popup-sottocategorie {
     display: block;
     animation: fadeIn 0.3s ease;
@@ -209,87 +166,66 @@ main {
         opacity: 0;
         transform: translateX(-50%) translateY(10px);
     }
-
     to {
         opacity: 1;
         transform: translateX(-50%) translateY(0);
     }
 }
 
-/* --- SOTTO-SOTTOCATEGORIE --- */
 .has-submenu {
     position: relative;
-    /* Per allineare il popup interno a questo figlio */
 }
 
-/* Stile popup terzo livello */
 .popup-sotto-sottocategorie {
     display: none;
     position: absolute;
     top: 0;
     left: 100%;
-    /* Si apre a destra del pannello padre */
     background-color: var(--colore-sfondo-menu-tendina);
     min-width: 200px;
     padding: 10px;
     margin-left: 0;
-    /* Nessun margine: elimina il vuoto (death-zone) dove si perdeva l'hover! */
     border-top: 3px solid var(--colore-accento);
-    /* Linea color oro anche sul sottomenu come nel principale */
     box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.1);
     border-radius: 0 8px 8px 8px;
-    /* Angoli smussati, ma diritto in alto a sinistra per attaccarsi bene */
 }
 
-/* Triangolino "freccia" che sporge a sinistra e indica il menu genitore */
 .popup-sotto-sottocategorie::before {
     content: '';
     position: absolute;
     top: 16px;
-    /* allineato verticalmente al primo elemento (13px + 3px div di bordo) */
     left: -7px;
-    /* sporge fuori a sinistra per sovrapporsi sottilmente */
     border-width: 8px 8px 8px 0;
     border-style: solid;
     border-color: transparent var(--colore-sfondo-menu-tendina) transparent transparent;
 }
 
-/* Hover per aprire il terzo livello */
 .has-submenu:hover .popup-sotto-sottocategorie {
     display: block;
     animation: popupScaleFade 0.25s cubic-bezier(0.18, 0.89, 0.32, 1.28) forwards;
     transform-origin: top left;
 }
 
-/* Animazione fluida con un piccolissimo "rimbalzo" (scala da giù verso l'alto) */
 @keyframes popupScaleFade {
     from {
         opacity: 0;
         transform: scale(0.95) translateX(-8px);
     }
-
     to {
         opacity: 1;
         transform: scale(1) translateX(0);
     }
 }
 
-/* Modifiche ai link padri per avere la freccia ben impaginata */
 .has-submenu>.link-sottocategoria {
     display: flex;
     justify-content: space-between;
-    /* Spinge la freccia a destra */
     align-items: center;
     padding-left: 15px;
     padding-right: 15px;
     text-align: left;
-    /* Migliore leggibilità */
 }
 
-/* Non serve ripetere test-align o hover shifting laterale perchè i testi 
-   hanno tutti padding-left 15px nativamente! I flexbox dei sottomenu ereditano elegantemente. */
-
-/* Effetto freccia */
 .has-submenu .freccia {
     font-size: 0.7rem;
     color: var(--colore-accento);
@@ -306,7 +242,6 @@ main {
     height: var(--altezza-logo);
 }
 
-/* --- CHI SIAMO (DESTRA) --- */
 .btn-chi-siamo {
     text-decoration: none;
     color: var(--colore-popup-bg);
@@ -320,7 +255,6 @@ main {
 
 .btn-chi-siamo:hover {
     color: var(--colore-accento);
-    /* Cambia solo colore al passaggio */
 }
 
 .btn-chi-siamo::after {
@@ -328,12 +262,9 @@ main {
     display: block;
     width: 0;
     height: 1.5px;
-    /* Stesso spessore del menu */
     background: var(--colore-accento);
-    /* Usa il color bronzo */
     transition: width 0.3s;
     margin-top: 5px;
-    /* Stesso spazio che spinge la linea in basso */
 }
 
 .btn-chi-siamo:hover::after {
@@ -346,37 +277,27 @@ main {
 
 .pagina-chi-siamo {
     padding: 20px 10px;
-    /* Spazio sopra e sotto per far respirare la pagina */
     background-color: #eeeeee;
-    /* Sfondo morbidissimo */
 }
 
-/* La scatola bianca centrale che contiene il testo */
 .storia-container {
     max-width: 800px;
-    /* Non troppo largo, altrimenti l'occhio si stanca a leggere */
     margin: 0 auto;
-    /* Centra la scatola nello schermo */
     background-color: #ffffff;
     padding: 20px 50px;
-    /* Spazio tra il testo e i bordi della scatola */
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
-    /* Un'ombra impercettibile per dare rilievo */
     border-radius: 4px;
 }
 
-/* Titolo principale */
 .titolo-storia {
     text-align: center;
     color: var(--colore-accento);
-    /* Usa il color bronzo che abbiamo impostato su in cima */
     font-size: 5rem;
     margin-bottom: 15px;
     letter-spacing: 1px;
     font-family: var(--font-logo);
 }
 
-/* Sottotitoli (Le origini, Oggi) */
 .sottotitolo-storia {
     color: var(--colore-testo);
     font-size: 3.2rem;
@@ -385,55 +306,41 @@ main {
     font-family: var(--font-logo);
 }
 
-/* Stile per i testi dei paragrafi */
 .storia-container p {
     font-size: 1.05rem;
     line-height: 1.8;
-    /* Spazio tra le righe per facilitare la lettura */
     margin-bottom: 15px;
     color: #555;
-    /* Un grigio leggermente più morbido per la lettura lunga */
     text-align: justify;
-    /* Allinea il testo sia a destra che a sinistra */
 }
 
-/* Stile speciale per l'introduzione */
 .intro-storia {
     font-size: 1.15rem !important;
-    /* Leggermente più grande del resto */
     font-style: italic;
-    /* Corsivo per dare un tono poetico/storico */
     text-align: center !important;
-    /* L'intro la centriamo */
     color: #666;
 }
 
-/* La lineetta decorativa per separare le sezioni */
 .divisorio-elegante {
     width: 100px;
     height: 2px;
     background-color: var(--colore-accento);
     margin: 30px auto;
-    /* Si posiziona automaticamente al centro */
 }
 
 /* =========================================
    SEZIONE MAPPA
    ========================================= */
+
 .sezione-mappa {
     max-width: 800px;
-    /* Larga esattamente quanto il testo della storia */
     margin: 40px auto;
-    /* 60px di spazio sopra e sotto, "auto" per centrarla */
     text-align: center;
-    /* Centra i titoli */
     padding: 0px 20px;
-    /* Evita che tocchi i bordi sui cellulari */
 }
 
 .titolo-mappa {
     color: var(--colore-accento);
-    /* Il tuo color bronzo elegante */
     font-size: 2.2rem;
     margin-bottom: 15px;
 }
@@ -444,49 +351,36 @@ main {
     font-size: 1.1rem;
 }
 
-/* La cornice della mappa */
 .contenitore-mappa {
     width: 100%;
     border-radius: 8px;
-    /* Arrotonda gli angoli della mappa */
     overflow: hidden;
-    /* "Taglia" gli spigoli della mappa che escono dagli angoli arrotondati */
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    /* Un'ombra morbida ed elegante */
     background-color: #eee;
-    /* Colore di fondo mentre la mappa carica */
 }
 
 /* =========================================
-   FOOTER (Parte finale del sito)
+   FOOTER
    ========================================= */
 
 .main-footer {
     background-color: var(--colore-sfondo-footer);
     color: var(--colore-testo-footer);
     padding: 20px 50px 10px 50px;
-    /* Spazi interni molto ridotti */
     margin-top: auto;
-    /* Aiuta a spingere il footer a fine pagina */
 }
 
 .footer-content {
     display: flex;
     justify-content: center;
-    /* Centra le due colonne in mezzo allo schermo */
     gap: 80px;
-    /* Distanza elegante tra Contatti e Orari */
     flex-wrap: wrap;
     max-width: 900px;
-    /* Evita che le colonne si allontanino troppo sui monitor grandi */
     margin: 0 auto 20px auto;
-    /* auto a destra e sinistra centra il blocco intero */
 }
 
-/* Stile per ogni singola colonna */
 .footer-col {
-    flex: 0 1 350px;
-    /* Le colonne saranno larghe al massimo 350px */
+    flex: 0 1 400px;
 }
 
 .footer-col h3 {
@@ -507,282 +401,338 @@ main {
     text-align: left;
 }
 
-/* Stile per la riga finale del Copyright */
 .footer-bottom {
     text-align: center;
     font-size: 0.8rem;
     border-top: 1px solid #444;
-    /* Riga separatrice sopra il copyright */
     padding-top: 20px;
     color: #999;
-    /* Grigio più chiaro per non distrarre */
 }
 
-/* Allarghiamo un po' le colonne per evitare che l'indirizzo vada a capo */
-.footer-col {
-    flex: 0 1 400px;
-}
-
-/* La struttura base per entrambe le liste (Contatti e Orari) */
 .lista-allineata {
     list-style: none;
     max-width: 380px;
 }
 
-/* LA MAGIA: Impostiamo un'altezza fissa per TUTTE le righe! */
 .lista-allineata li {
     font-size: 0.9rem;
     padding: 8px 0;
     min-height: 45px;
-    /* Tutte le righe saranno alte almeno 45 pixel */
     display: flex;
     align-items: center;
-    /* Centra il testo in altezza nella sua riga */
 }
 
-/* Stile per la colonna Contatti */
 .riga-contatti {
     border-bottom: 1px solid #444;
-    /* Sostituito "transparent" con il colore della linea visibile! */
     width: 100%;
-    /* Assicura che la linea sia lunga quanto quella degli orari */
 }
 
-/* Stile per la colonna Orari */
 .riga-orari {
     justify-content: space-between;
-    /* Giorni a sinistra, ore a destra */
     border-bottom: 1px solid #444;
-    /* Riga visibile */
     width: 100%;
 }
 
 .lista-allineata li:last-child {
     border-bottom: none;
-    /* "none" significa "nessuno", quindi fa sparire l'ultima riga */
 }
 
 /* HERO */
 .hero {
-  position: relative;
-  width: 100%;
-  height: 90vh;
-  background-image: url('img/hero.jpg');
-  background-size: cover;
-  background-position: center 30%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+    position: relative;
+    width: 100%;
+    height: 90vh;
+    background-image: url('img/hero.jpg');
+    background-size: cover;
+    background-position: center 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
 }
 
 .hero-content {
-  position: relative;
-  z-index: 1;
-  color: white;
+    position: relative;
+    z-index: 1;
+    color: white;
 }
 
 .hero-content h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 3rem;
-  margin-bottom: 1rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    margin-bottom: 1rem;
 }
 
 .hero-content p {
-  font-size: 1.3rem;
-  margin-bottom: 2rem;
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
 }
 
 .hero-btn {
-  padding: 14px 36px;
-  background-color: transparent;
-  color: white;
-  border: 2px solid white;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 4px;
-  transition: background 0.3s, color 0.3s;
+    padding: 14px 36px;
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: background 0.3s, color 0.3s;
 }
 
 .hero-btn:hover {
-  background-color: white;
-  color: #333;
+    background-color: white;
+    color: #333;
 }
 
 /* STRISCIA VALORI */
 .valori {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 0;
-  padding: 80px 80px;
-  background-color: #fff;
-  text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0;
+    padding: 80px 80px;
+    background-color: #fff;
+    text-align: center;
 }
 
 .valore {
-  flex: 1;
-  max-width: 320px;
-  padding: 0 60px;
-  border-right: 1px solid #e0d8cc;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    flex: 1;
+    max-width: 320px;
+    padding: 0 60px;
+    border-right: 1px solid #e0d8cc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .valore:last-child {
-  border-right: none;
+    border-right: none;
 }
 
 .valore-icona {
-  font-size: 2rem;
-  display: block;
-  margin-bottom: 20px;
-  color: #2c4a2e;
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 20px;
+    color: #2c4a2e;
 }
 
 .valore h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: 0.95rem;
-  margin-bottom: 12px;
-  color: #2c4a2e;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
+    font-family: 'Playfair Display', serif;
+    font-size: 0.95rem;
+    margin-bottom: 12px;
+    color: #2c4a2e;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
 }
 
 .valore p {
-  font-size: 0.95rem;
-  color: #666;
-  line-height: 1.8;
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.8;
 }
 
 /* GRIGLIA CATEGORIE */
 .categorie {
-  padding: 80px 60px;
-  background-color: #f9f6f1;
-  text-align: center;
+    padding: 80px 60px;
+    background-color: #f9f6f1;
+    text-align: center;
 }
 
 .categorie-titolo {
-  font-family: 'Playfair Display', serif;
-  font-size: 2rem;
-  color: #2c4a2e;
-  margin-bottom: 50px;
-  letter-spacing: 0.05em;
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: #2c4a2e;
+    margin-bottom: 50px;
+    letter-spacing: 0.05em;
 }
 
 .categorie-griglia {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  max-width: 1100px;
-  margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
 .categoria-card {
-  position: relative;
-  overflow: hidden;
-  border-radius: 6px;
-  cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    border-radius: 6px;
+    cursor: pointer;
 }
 
 .categoria-card img {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.4s ease;
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
 }
 
 .categoria-card:hover img {
-  transform: scale(1.05);
+    transform: scale(1.05);
 }
 
 .categoria-nome {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  padding: 16px;
-  background: linear-gradient(transparent, rgba(0,0,0,0.6));
-  color: white;
-  font-family: 'Playfair Display', serif;
-  font-size: 1.1rem;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.6));
+    color: white;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
 }
 
-/* SEZIONE NOVITÀ */
+/* =========================================
+   SEZIONE NOVITÀ
+   ========================================= */
+
 .novita {
-  display: flex;
-  align-items: center;
-  gap: 60px;
-  padding: 80px 60px;
-  background-color: #ffffff;
-  max-width: 1200px;
-  margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;                        /* ← più respiro tra testo e video */
+    padding: 70px 8%;
+    background-color: #f9f6f1;
+    width: 100%;
+    border-top: 2px solid #C0A664;
+    border-bottom: 2px solid #C0A664;
 }
 
 .novita-testo {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+    flex: 1;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;                        /* ← più spazio tra badge, titolo, testo, bottone */
 }
 
 .novita-tag {
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  font-size: 0.85rem;
-  color: #2c4a2e;
-  font-weight: 600;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-size: 0.75rem;
+    color: #ffffff;
+    font-weight: 700;
+    background-color: #C0A664;
+    padding: 6px 16px;
+    border-radius: 2px;
+    width: fit-content;
 }
 
 .novita-testo h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2rem;
-  color: #1a1a1a;
-  line-height: 1.3;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;               /* ← leggermente più grande */
+    color: #1a1a1a;
+    line-height: 1.4;
 }
 
 .novita-testo p {
-  font-size: 1rem;
-  color: #555;
-  line-height: 1.8;
+    font-size: 1.05rem;
+    color: #666;
+    line-height: 2;                  /* ← più spazio tra le righe del testo */
 }
 
 .novita-btn {
-  display: inline-block;
-  width: fit-content;
-  padding: 12px 30px;
-  background-color: #2c4a2e;
-  color: white;
-  text-decoration: none;
-  font-size: 0.9rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  transition: background 0.3s ease;
+    display: inline-block;
+    width: fit-content;
+    padding: 14px 34px;
+    background-color: #2c4a2e;
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: background 0.3s ease, transform 0.2s ease;
+    border-radius: 2px;
 }
 
 .novita-btn:hover {
-  background-color: #1a2e1b;
+    background-color: #1a2e1b;
+    transform: translateY(-2px);
 }
 
 .novita-video {
-  flex: 0 0 320px;
-  aspect-ratio: 9/16;
-  border-radius: 12px;
-  overflow: hidden;
+    flex: 0 0 300px;                 /* ← più grande, da 260px a 300px */
+    max-height: 540px;               /* ← più alto */
+    aspect-ratio: 9/16;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+    border: 3px solid #C0A664;
 }
 
 .novita-video video,
 .novita-video iframe {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/* STRISCIA BRAND */
+.brands-strip {
+    width: 100%;
+    overflow: hidden;
+    background-color: #fff;
+    padding: 40px 0 30px;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+.brands-titolo {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #C0A664;
+    margin-bottom: 25px;
+}
+
+.brands-track {
+    display: flex;
+    width: max-content;
+    animation: scroll-brands 60s linear infinite;
+}
+
+.brands-track:hover {
+    animation-play-state: paused;
+}
+
+.brands-slide {
+    display: flex;
+    align-items: center;
+    gap: 70px;
+    padding: 0 35px;
+}
+
+.brands-slide img {
+    height: 60px;
+    width: auto;
+    object-fit: contain;
+    opacity: 1;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.brands-slide img:hover {
+    transform: scale(1.08);
+    opacity: 0.85;
+}
+
+.brands-slide img.logo-grande {
+    height: 100px;
+}
+
+@keyframes scroll-brands {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
 }
