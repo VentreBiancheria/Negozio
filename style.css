@@ -327,6 +327,65 @@ main {
     background-color: var(--colore-accento);
     margin: 30px auto;
 }
+.storia-container.storia-con-sfondo {
+    position: relative;
+    width: 100vw;
+    max-width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    padding: 90px 40px;
+    box-sizing: border-box;
+    overflow: hidden;
+    border-top: 2px solid #C0A664;
+    border-bottom: 2px solid #C0A664;
+    background-image: url('./img/via-duomo.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.storia-container.storia-con-sfondo::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.08);
+    pointer-events: none;
+}
+
+.storia-con-sfondo .storia-box {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.58);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    padding: 55px 40px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.10);
+    border: 1px solid rgba(192, 166, 100, 0.35);
+}
+
+.storia-con-sfondo .titolo-storia,
+.storia-con-sfondo .sottotitolo-storia {
+    color: #1f1f1f;
+}
+
+.storia-con-sfondo p,
+.storia-con-sfondo .intro-storia {
+    color: #2f2f2f;
+}
+
+@media (max-width: 768px) {
+    .storia-container.storia-con-sfondo {
+        padding: 50px 16px;
+        background-position: center top;
+    }
+
+    .storia-con-sfondo .storia-box {
+        padding: 35px 22px;
+        background: rgba(255, 255, 255, 0.72);
+    }
+}
 
 /* =========================================
    SEZIONE MAPPA
@@ -444,7 +503,7 @@ main {
     height: 90vh;
     background-image: url('img/hero.jpg');
     background-size: cover;
-    background-position: center 30%;
+    background-position: 68% 38%;
     display: flex;
     align-items: center;
     justify-content: center;
