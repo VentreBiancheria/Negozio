@@ -14,9 +14,9 @@ document.getElementById("header-container").innerHTML = `
         <nav class="nav-centrale">
             <ul class="menu-list">
                 <li class="menu-item">
-                    <a href="#">Biancheria da letto</a>
+                    <a href="biancheria-letto.html">Biancheria da letto</a>
                     <div class="popup-sottocategorie">
-                        <a href="#" class="link-sottocategoria">Lenzuola</a>
+                        <a href="lenzuola.html" class="link-sottocategoria">Lenzuola</a>
                         <a href="#" class="link-sottocategoria">Copriletto</a>
                         <a href="#" class="link-sottocategoria">Piumoni</a>
                         <a href="#" class="link-sottocategoria">Trapunte</a>
@@ -69,6 +69,7 @@ document.getElementById("header-container").innerHTML = `
                                 <a href="#" class="link-sottocategoria">Vestaglie e giacche da camera</a>
                             </div>
                         </div>
+
                         <div class="has-submenu">
                             <a href="#" class="link-sottocategoria"><strong>Donna</strong> <span class="freccia">&#9654;</span></a>
                             <div class="popup-sotto-sottocategorie">
@@ -76,6 +77,7 @@ document.getElementById("header-container").innerHTML = `
                                 <a href="#" class="link-sottocategoria">Vestaglie</a>
                             </div>
                         </div>
+
                         <div class="has-submenu">
                             <a href="#" class="link-sottocategoria"><strong>Bambino</strong> <span class="freccia">&#9654;</span></a>
                             <div class="popup-sotto-sottocategorie">
@@ -98,6 +100,7 @@ document.getElementById("header-container").innerHTML = `
                                 <a href="#" class="link-sottocategoria">Calze</a>
                             </div>
                         </div>
+
                         <div class="has-submenu">
                             <a href="#" class="link-sottocategoria"><strong>Donna</strong> <span class="freccia">&#9654;</span></a>
                             <div class="popup-sotto-sottocategorie">
@@ -107,6 +110,7 @@ document.getElementById("header-container").innerHTML = `
                                 <a href="#" class="link-sottocategoria">Calze</a>
                             </div>
                         </div>
+
                         <div class="has-submenu">
                             <a href="#" class="link-sottocategoria"><strong>Bambino</strong> <span class="freccia">&#9654;</span></a>
                             <div class="popup-sotto-sottocategorie">

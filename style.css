@@ -809,3 +809,156 @@ main {
     0%   { transform: translateX(0); }
     100% { transform: translateX(-50%); }
 }
+c
+.pagina-categoria,
+.pagina-prodotti {
+    background: #f8f7f3;
+    color: #1f1f1f;
+    min-height: 100vh;
+}
+
+.hero-categoria img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    display: block;
+}
+
+.intro-categoria {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 24px 20px;
+}
+
+.breadcrumb {
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 18px;
+}
+
+.intro-categoria h1,
+.top-prodotti h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    margin-bottom: 18px;
+    color: #173c2d;
+}
+
+.intro-categoria h2 {
+    font-size: 1.9rem;
+    font-weight: 400;
+    margin-bottom: 16px;
+}
+
+.intro-categoria p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    max-width: 1000px;
+}
+
+.tipi-prodotti {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 10px 24px 60px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+}
+
+.tipo-card {
+    text-decoration: none;
+    color: #1f1f1f;
+    display: block;
+}
+
+.tipo-card img {
+    width: 100%;
+    height: 340px;
+    object-fit: cover;
+    display: block;
+}
+
+.tipo-card span {
+    display: block;
+    font-size: 1.15rem;
+    margin-top: 12px;
+}
+
+.top-prodotti {
+    text-align: center;
+    padding: 42px 24px 24px;
+    background: #efeeea;
+}
+
+.toolbar-prodotti {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 24px;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    background: #fff;
+    font-size: 0.95rem;
+}
+
+.griglia-prodotti {
+    padding: 36px 24px 70px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    background: #fff;
+}
+
+.card-prodotto img {
+    width: 100%;
+    aspect-ratio: 1 / 1.1;
+    object-fit: contain;
+    background: #f4f4f4;
+    display: block;
+}
+
+.card-prodotto h3 {
+    font-size: 0.95rem;
+    margin: 14px 0 6px;
+    text-transform: uppercase;
+}
+
+.card-prodotto .marca {
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 4px;
+}
+
+.card-prodotto .prezzo {
+    font-size: 0.95rem;
+    color: #1f1f1f;
+}
+
+@media (max-width: 992px) {
+    .griglia-prodotti,
+    .tipi-prodotti {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .griglia-prodotti,
+    .tipi-prodotti {
+        grid-template-columns: 1fr;
+    }
+
+    .intro-categoria h1,
+    .top-prodotti h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-categoria img {
+        height: 220px;
+    }
+}
+/* =========================================
+   Scorrimento
+   ========================================= */
+html {
+    scroll-behavior: smooth;
+}
