@@ -12,16 +12,27 @@ document.getElementById("footer-container").innerHTML = `
                     <li class="riga-contatti">
                         <span><strong>Indirizzo:</strong> Via Duomo, 18/20, 84121 Salerno SA</span>
                     </li>
+
                     <li class="riga-contatti">
-                        <span><strong>Telefono:</strong> 089 228601</span>
+                        <a href="tel:+39089228601" style="color: inherit; text-decoration: none;">
+                            <strong>Telefono:</strong> 089 228601
+                        </a>
                     </li>
+
                     <li class="riga-contatti">
-                        <a href="https://www.instagram.com/ventre.biancheria?igsh=MWc1YW5rcnR5cmxkbg==" target="_blank" style="color: var(--colore-accento-footer); text-decoration: none; font-weight: bold;">
+                        <a href="mailto:antonio-ventre@alice.it?subject=Richiesta%20informazioni" style="color: var(--colore-accento-footer); text-decoration: none; font-weight: bold;">
+                            <i class="fa-solid fa-envelope" style="margin-right: 8px;"></i>antonio-ventre@alice.it
+                        </a>
+                    </li>
+
+                    <li class="riga-contatti">
+                        <a href="https://www.instagram.com/ventre.biancheria?igsh=MWc1YW5rcnR5cmxkbg==" target="_blank" rel="noopener noreferrer" style="color: var(--colore-accento-footer); text-decoration: none; font-weight: bold;">
                             <i class="fa-brands fa-instagram" style="margin-right: 8px;"></i>Seguici su Instagram
                         </a>
                     </li>
+
                     <li class="riga-contatti">
-                        <a href="https://www.facebook.com/p/Ventre-biancheria-100066561880029/" target="_blank" style="color: var(--colore-accento-footer); text-decoration: none; font-weight: bold;">
+                        <a href="https://www.facebook.com/p/Ventre-biancheria-100066561880029/" target="_blank" rel="noopener noreferrer" style="color: var(--colore-accento-footer); text-decoration: none; font-weight: bold;">
                             <i class="fa-brands fa-facebook" style="margin-right: 8px;"></i>Seguici su Facebook
                         </a>
                     </li>
@@ -36,7 +47,6 @@ document.getElementById("footer-container").innerHTML = `
                     <li class="riga-orari"><span>Domenica</span> <span>Chiuso</span></li>
                 </ul>
             </div>
-
         </div>
 
         <div class="footer-bottom">
