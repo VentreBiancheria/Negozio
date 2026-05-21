@@ -1,6 +1,6 @@
 /* =========================================
    PANNELLO DI CONTROLLO (Variabili)
-   ========================================= */
+   ========================================== */
 :root {
     --background-color: #eeeeee;
     --colore-sfondo-bar: #23512C;
@@ -118,27 +118,22 @@ main {
 
 .btn-chi-siamo {
     color: #ffffff;
-    font-weight: 600;
-    border: 1px solid transparent;
-    padding-inline: 10px;
+    font-weight: 700;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    padding: 10px 18px;
 }
 
 .btn-chi-siamo:hover {
-    color: var(--colore-accento);
+    background: rgba(255, 255, 255, 0.10);
+    border-color: rgba(255, 255, 255, 0.38);
+    color: #ffffff;
+    transform: translateY(-1px);
 }
 
 .btn-chi-siamo::after {
-    content: '';
-    display: block;
-    width: 0;
-    height: 1.5px;
-    background: var(--colore-accento);
-    transition: width 0.3s ease;
-    margin-top: 5px;
-}
-
-.btn-chi-siamo:hover::after {
-    width: 100%;
+    display: none;
 }
 
 .telefono-header i,
@@ -195,13 +190,13 @@ main {
 
     .btn-chi-siamo {
         min-height: 44px;
-        padding: 10px 8px;
-        font-size: 0.88rem;
-        letter-spacing: 0.5px;
+        padding: 0 14px;
+        font-size: 0.82rem;
+        letter-spacing: 0;
     }
 
     .btn-chi-siamo::after {
-        margin-top: 3px;
+        display: none;
     }
 }
 
@@ -225,7 +220,7 @@ main {
 
 /* =========================================
    PAGINA "CHI SIAMO"
-   ========================================= */
+   ========================================== */
 
 .pagina-chi-siamo {
     padding: 20px 10px;
@@ -344,7 +339,7 @@ main {
 
 /* =========================================
    SEZIONE MAPPA
-   ========================================= */
+   ========================================== */
 
 .sezione-mappa {
     max-width: 800px;
@@ -375,7 +370,7 @@ main {
 
 /* =========================================
    FOOTER
-   ========================================= */
+   ========================================== */
 
 .main-footer {
     background-color: var(--colore-sfondo-footer);
@@ -508,29 +503,40 @@ main {
 .valori {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
-    gap: 0;
+    align-items: stretch;
+    gap: 24px;
     padding: 80px 80px;
     background-color: #fff;
     text-align: center;
 }
 
 .valore {
+    position: relative;
     flex: 1;
-    max-width: 320px;
-    padding: 0 60px;
-    border-right: 1px solid #e0d8cc;
+    max-width: 340px;
+    padding: 0 72px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: flex-start;
 }
 
-.valore:last-child {
-    border-right: none;
+.valore::after {
+    content: "";
+    position: absolute;
+    top: 8%;
+    right: 0;
+    width: 1px;
+    height: 84%;
+    background-color: #e0d8cc;
+}
+
+.valore:last-child::after {
+    display: none;
 }
 
 .valore-icona {
-    font-size: 2rem;
+    font-size: 2.15rem;
     display: block;
     margin-bottom: 20px;
     color: #2c4a2e;
@@ -538,20 +544,21 @@ main {
 
 .valore h3 {
     font-family: 'Playfair Display', serif;
-    font-size: 0.95rem;
-    margin-bottom: 12px;
+    font-size: 1.15rem;
+    margin-bottom: 14px;
     color: #2c4a2e;
     letter-spacing: 0.05em;
     text-transform: uppercase;
+    line-height: 1.35;
+    min-height: 72px;
 }
 
 .valore p {
-    font-size: 0.95rem;
+    font-size: 1.08rem;
     color: #666;
-    line-height: 1.8;
+    line-height: 1.9;
 }
 
-/* GRIGLIA CATEGORIE */
 /* GRIGLIA CATEGORIE */
 .categorie {
     padding: 90px 20px 100px;
@@ -704,13 +711,13 @@ main {
 
 /* =========================================
    SEZIONE NOVITÀ
-   ========================================= */
+   ========================================== */
 
 .novita {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 80px;                        /* ← più respiro tra testo e video */
+    gap: 80px;
     padding: 70px 8%;
     background-color: #f9f6f1;
     width: 100%;
@@ -723,7 +730,7 @@ main {
     max-width: 500px;
     display: flex;
     flex-direction: column;
-    gap: 28px;                        /* ← più spazio tra badge, titolo, testo, bottone */
+    gap: 28px;
 }
 
 .novita-tag {
@@ -741,7 +748,7 @@ main {
 
 .novita-testo h2 {
     font-family: 'Playfair Display', serif;
-    font-size: 2.2rem;               /* ← leggermente più grande */
+    font-size: 2.2rem;
     color: #1a1a1a;
     line-height: 1.4;
 }
@@ -749,7 +756,7 @@ main {
 .novita-testo p {
     font-size: 1.05rem;
     color: #666;
-    line-height: 2;                  /* ← più spazio tra le righe del testo */
+    line-height: 2;
 }
 
 .novita-btn {
@@ -773,8 +780,8 @@ main {
 }
 
 .novita-video {
-    flex: 0 0 300px;                 /* ← più grande, da 260px a 300px */
-    max-height: 540px;               /* ← più alto */
+    flex: 0 0 300px;
+    max-height: 540px;
     aspect-ratio: 9/16;
     border-radius: 16px;
     overflow: hidden;
@@ -788,6 +795,7 @@ main {
     height: 100%;
     object-fit: cover;
 }
+
 /* STRISCIA BRAND */
 .brands-strip {
     width: 100%;
@@ -853,9 +861,11 @@ main {
 .brands-slide img.logo-xl {
     height: 180px;
 }
+
 .brands-slide img.logo-xxl {
     height: 240px;
 }
+
 @keyframes scroll-brands {
     0%   { transform: translateX(0); }
     100% { transform: translateX(-50%); }
@@ -1007,12 +1017,14 @@ main {
         height: 220px;
     }
 }
+
 /* =========================================
    Scorrimento
-   ========================================= */
+   ========================================== */
 html {
     scroll-behavior: smooth;
 }
+
 /* =========================================
    RESPONSIVE FIXES FINALI
    Da incollare in fondo al file
@@ -1039,11 +1051,12 @@ html {
     }
 
     .valori {
-        padding: 50px 18px;
+        padding: 50px 24px;
+        gap: 18px;
     }
 
     .valore {
-        padding: 0 18px;
+        padding: 0 24px;
     }
 
     .novita {
@@ -1063,10 +1076,14 @@ html {
 
 @media (max-width: 768px) {
     .top-bar {
-        padding: 8px 14px;
+        padding: 8px 12px;
         min-height: 74px;
-        gap: 18px;
+        gap: 10px;
         flex-wrap: nowrap;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        overflow: visible;
     }
 
     .logo-container {
@@ -1075,22 +1092,25 @@ html {
         display: flex;
         align-items: center;
         flex: 0 0 auto;
-        margin-right: 6px;
+        margin-right: 0;
+        min-width: 0;
     }
 
     .logo-img {
-        height: 54px;
+        height: 50px;
     }
 
     .info-destra {
         display: flex;
         align-items: center;
         justify-content: flex-end;
-        gap: 8px;
+        gap: 6px;
         flex-wrap: nowrap;
         width: auto;
         min-width: 0;
+        max-width: none;
         margin-left: auto;
+        overflow: visible;
     }
 
     .telefono-header span,
@@ -1100,21 +1120,39 @@ html {
 
     .telefono-header,
     .btn-raggiungerci {
-        width: 38px;
-        min-width: 38px;
-        height: 38px;
-        min-height: 38px;
+        width: 36px;
+        min-width: 36px;
+        height: 36px;
+        min-height: 36px;
         padding: 0;
         flex-shrink: 0;
+        flex: 0 0 36px;
     }
 
     .btn-chi-siamo {
-        min-height: 38px;
-        padding: 8px 8px;
-        font-size: 0.78rem;
-        letter-spacing: 0.2px;
-        flex-shrink: 0;
+        order: 0;
+        width: auto;
+        min-width: 120px;
+        height: 36px;
+        min-height: 36px;
+        padding: 0 14px;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0;
+        flex: 0 0 auto;
         white-space: nowrap;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.22);
+        color: #ffffff;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        max-width: none;
+        overflow: visible;
+        text-overflow: clip;
+        line-height: 1;
+        box-shadow: none;
     }
 
     .btn-chi-siamo::after {
@@ -1159,15 +1197,15 @@ html {
         flex-direction: row;
         justify-content: center;
         align-items: stretch;
-        padding: 26px 8px;
-        gap: 0;
+        padding: 30px 12px;
+        gap: 10px;
     }
 
     .valore {
         flex: 1;
         max-width: none;
         min-width: 0;
-        padding: 16px 10px;
+        padding: 18px 14px;
         border-right: 1px solid #e0d8cc;
         border-bottom: none;
     }
@@ -1177,20 +1215,21 @@ html {
     }
 
     .valore-icona {
-        font-size: 1.5rem;
+        font-size: 1.7rem;
         margin-bottom: 12px;
     }
 
     .valore h3 {
-        font-size: 0.72rem;
-        line-height: 1.35;
-        margin-bottom: 8px;
+        font-size: 0.84rem;
+        line-height: 1.4;
+        margin-bottom: 10px;
         letter-spacing: 0.03em;
+        min-height: 46px;
     }
 
     .valore p {
-        font-size: 0.74rem;
-        line-height: 1.45;
+        font-size: 0.84rem;
+        line-height: 1.55;
     }
 
     .brands-strip {
@@ -1373,12 +1412,12 @@ html {
     }
 
     .storia-con-sfondo .storia-box {
-    max-width: 88%;
-    padding: 24px 16px;
-    background: rgba(255, 255, 255, 0.62);
-    backdrop-filter: blur(2px);
-    -webkit-backdrop-filter: blur(2px);
-}
+        max-width: 88%;
+        padding: 24px 16px;
+        background: rgba(255, 255, 255, 0.62);
+        backdrop-filter: blur(2px);
+        -webkit-backdrop-filter: blur(2px);
+    }
 
     .hero-categoria img {
         height: 240px;
@@ -1435,34 +1474,40 @@ html {
     .top-bar {
         padding: 8px 10px;
         min-height: 68px;
-        gap: 14px;
+        gap: 8px;
     }
 
     .logo-container {
-        margin-right: 4px;
+        margin-right: 0;
     }
 
     .logo-img {
-        height: 46px;
+        height: 44px;
     }
 
     .info-destra {
-        gap: 7px;
+        gap: 5px;
         margin-left: auto;
+        overflow: visible;
     }
 
     .telefono-header,
     .btn-raggiungerci {
-        width: 36px;
-        min-width: 36px;
-        height: 36px;
-        min-height: 36px;
+        width: 34px;
+        min-width: 34px;
+        height: 34px;
+        min-height: 34px;
+        flex: 0 0 34px;
     }
 
     .btn-chi-siamo {
-        min-height: 36px;
-        font-size: 0.72rem;
-        padding: 7px 6px;
+        min-width: 112px;
+        height: 34px;
+        min-height: 34px;
+        padding: 0 12px;
+        font-size: 0.66rem;
+        max-width: none;
+        overflow: visible;
     }
 
     .hero {
@@ -1484,25 +1529,28 @@ html {
     }
 
     .valori {
-        padding: 22px 4px;
+        padding: 24px 6px;
+        gap: 6px;
     }
 
     .valore {
-        padding: 14px 6px;
+        padding: 16px 8px;
     }
 
     .valore-icona {
-        font-size: 1.3rem;
+        font-size: 1.4rem;
         margin-bottom: 10px;
     }
 
     .valore h3 {
-        font-size: 0.64rem;
+        font-size: 0.7rem;
+        line-height: 1.35;
+        min-height: 40px;
     }
 
     .valore p {
-        font-size: 0.68rem;
-        line-height: 1.35;
+        font-size: 0.72rem;
+        line-height: 1.4;
     }
 
     .categorie-titolo,
@@ -1546,9 +1594,11 @@ html {
     }
 
     .btn-chi-siamo {
-        font-size: 0.7rem;
-        letter-spacing: 0.1px;
-        padding: 7px 5px;
+        min-width: 104px;
+        font-size: 0.62rem;
+        padding: 0 10px;
+        max-width: none;
+        overflow: visible;
     }
 
     .titolo-storia {
@@ -1559,6 +1609,7 @@ html {
         font-size: 1.85rem;
     }
 }
+
 .brands-scroll {
     width: 100%;
     overflow: hidden;

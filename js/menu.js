@@ -17,7 +17,7 @@ document.getElementById("header-container").innerHTML = `
                 <span>089 228601</span>
             </a>
 
-            <a href="https://www.google.com/maps/search/?api=1&query=Via+Duomo+18%2F20%2C+84121+Salerno+SA"
+            <a href="https://maps.app.goo.gl/XsoQcuGuuysRmFhs6"
                target="_blank"
                rel="noopener noreferrer"
                class="btn-raggiungerci"
