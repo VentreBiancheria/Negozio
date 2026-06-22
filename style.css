@@ -13,7 +13,7 @@
     --colore-accento-footer: #C0A664;
     --colore-sfondo-menu-tendina: #ffffff;
     --altezza-logo: 90px;
-    --grandezza-testo-menu: 1.0rem;
+    --grandezza-testo-menu: 1rem;
     --font-principale: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     --font-logo: 'Tangerine', cursive;
 }
@@ -22,6 +22,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -37,6 +41,9 @@ main {
     flex-grow: 1;
 }
 
+/* =========================================
+   HEADER
+   ========================================== */
 .top-bar {
     display: flex;
     align-items: center;
@@ -70,7 +77,6 @@ main {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    flex-wrap: wrap;
     gap: 12px;
 }
 
@@ -142,86 +148,9 @@ main {
     flex-shrink: 0;
 }
 
-@media (max-width: 1100px) {
-    .top-bar {
-        padding: 10px 20px;
-        gap: 16px;
-    }
-
-    .info-destra {
-        gap: 10px;
-    }
-
-    .telefono-header,
-    .btn-raggiungerci,
-    .btn-chi-siamo {
-        font-size: 0.9rem;
-        padding: 10px 14px;
-    }
-}
-
-@media (max-width: 768px) {
-    .top-bar {
-        padding: 10px 16px;
-        min-height: auto;
-    }
-
-    .logo-img {
-        height: 74px;
-    }
-
-    .info-destra {
-        gap: 8px;
-    }
-
-    .telefono-header span,
-    .btn-raggiungerci span {
-        display: none;
-    }
-
-    .telefono-header,
-    .btn-raggiungerci {
-        width: 44px;
-        min-width: 44px;
-        height: 44px;
-        min-height: 44px;
-        padding: 0;
-    }
-
-    .btn-chi-siamo {
-        min-height: 44px;
-        padding: 0 14px;
-        font-size: 0.82rem;
-        letter-spacing: 0;
-    }
-
-    .btn-chi-siamo::after {
-        display: none;
-    }
-}
-
-@media (max-width: 560px) {
-    .top-bar {
-        flex-wrap: wrap;
-        justify-content: center;
-        text-align: center;
-    }
-
-    .logo-container {
-        width: 100%;
-        justify-content: center;
-    }
-
-    .info-destra {
-        width: 100%;
-        justify-content: center;
-    }
-}
-
 /* =========================================
-   PAGINA "CHI SIAMO"
+   PAGINA CHI SIAMO
    ========================================== */
-
 .pagina-chi-siamo {
     padding: 20px 10px;
     background-color: #eeeeee;
@@ -325,27 +254,15 @@ main {
     color: #2f2f2f;
 }
 
-@media (max-width: 768px) {
-    .storia-container.storia-con-sfondo {
-        padding: 50px 16px;
-        background-position: center top;
-    }
-
-    .storia-con-sfondo .storia-box {
-        padding: 35px 22px;
-        background: rgba(255, 255, 255, 0.72);
-    }
-}
-
 /* =========================================
    SEZIONE MAPPA
    ========================================== */
-
 .sezione-mappa {
-    max-width: 800px;
-    margin: 40px auto;
+    background: #f9f6f1;
+    max-width: 100%;
+    margin: 0;
     text-align: center;
-    padding: 0px 20px;
+    padding: 34px 20px 40px;
 }
 
 .titolo-mappa {
@@ -362,16 +279,17 @@ main {
 
 .contenitore-mappa {
     width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    background-color: #eee;
+    background: transparent;
 }
 
 /* =========================================
    FOOTER
    ========================================== */
-
 .main-footer {
     background-color: var(--colore-sfondo-footer);
     color: var(--colore-testo-footer);
@@ -380,30 +298,25 @@ main {
 }
 
 .footer-content {
-    display: flex;
-    justify-content: center;
-    gap: 80px;
-    flex-wrap: wrap;
-    max-width: 900px;
-    margin: 0 auto 20px auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr);
+    gap: 22px;
+    max-width: 980px;
+    margin: 0 auto 18px auto;
+    align-items: start;
 }
 
 .footer-col {
-    flex: 0 1 400px;
+    min-width: 0;
 }
 
 .footer-col h3 {
-    font-size: 1.1rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 15px;
+    font-size: 1rem;
+    line-height: 1.15;
+    letter-spacing: 0.06em;
+    margin-bottom: 16px;
     color: var(--colore-accento-footer);
-}
-
-.footer-col p {
-    font-size: 0.9rem;
-    line-height: 1.6;
-    margin-bottom: 10px;
+    text-transform: uppercase;
 }
 
 .footer-col:last-child {
@@ -412,38 +325,53 @@ main {
 
 .footer-bottom {
     text-align: center;
-    font-size: 0.8rem;
-    border-top: 1px solid #444;
-    padding-top: 20px;
+    font-size: 0.78rem;
+    line-height: 1.5;
+    border-top: 1px solid rgba(255, 255, 255, 0.10);
+    padding-top: 18px;
     color: #999;
 }
 
 .lista-allineata {
     list-style: none;
-    max-width: 380px;
+    max-width: 100%;
 }
 
 .lista-allineata li {
     font-size: 0.9rem;
-    padding: 8px 0;
-    min-height: 45px;
-    display: flex;
-    align-items: center;
-}
-
-.riga-contatti {
-    border-bottom: 1px solid #444;
-    width: 100%;
-}
-
-.riga-orari {
-    justify-content: space-between;
-    border-bottom: 1px solid #444;
+    padding: 10px 0;
+    line-height: 1.45;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     width: 100%;
 }
 
 .lista-allineata li:last-child {
     border-bottom: none;
+}
+
+.riga-contatti,
+.riga-orari {
+    width: 100%;
+    min-width: 0;
+}
+
+.riga-orari {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.riga-orari span:last-child,
+.riga-orari strong:last-child {
+    text-align: right;
+    white-space: nowrap;
+}
+
+.main-footer a[href^="mailto:"] {
+    font-size: 0.9rem;
+    word-break: break-word;
+    overflow-wrap: anywhere;
 }
 
 /* HERO */
@@ -504,7 +432,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: stretch;
-    gap: 24px;
+    gap: 0;
     padding: 80px 80px;
     background-color: #fff;
     text-align: center;
@@ -512,9 +440,10 @@ main {
 
 .valore {
     position: relative;
-    flex: 1;
+    flex: 1 1 0;
     max-width: 340px;
-    padding: 0 72px;
+    min-width: 0;
+    padding: 0 44px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -524,10 +453,10 @@ main {
 .valore::after {
     content: "";
     position: absolute;
-    top: 8%;
+    top: 20px;
     right: 0;
     width: 1px;
-    height: 84%;
+    height: calc(100% - 40px);
     background-color: #e0d8cc;
 }
 
@@ -545,18 +474,24 @@ main {
 .valore h3 {
     font-family: 'Playfair Display', serif;
     font-size: 1.15rem;
-    margin-bottom: 14px;
+    margin-bottom: 18px;
     color: #2c4a2e;
     letter-spacing: 0.05em;
     text-transform: uppercase;
     line-height: 1.35;
     min-height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .valore p {
     font-size: 1.08rem;
     color: #666;
     line-height: 1.9;
+    max-width: 18ch;
+    margin: 0 auto;
 }
 
 /* GRIGLIA CATEGORIE */
@@ -663,7 +598,6 @@ main {
     font-size: clamp(1.1rem, 2vw, 1.5rem);
     line-height: 1.2;
     letter-spacing: 0.04em;
-    text-transform: none;
     text-align: left;
     text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
     background: none;
@@ -671,48 +605,7 @@ main {
     width: auto;
 }
 
-@media (max-width: 992px) {
-    .categorie {
-        padding: 80px 20px 90px;
-    }
-
-    .categorie-griglia {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 22px;
-    }
-}
-
-@media (max-width: 640px) {
-    .categorie {
-        padding: 70px 16px 80px;
-    }
-
-    .categorie-griglia {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    .categoria-card {
-        aspect-ratio: 5 / 4;
-        border-radius: 12px;
-    }
-
-    .categoria-card::after {
-        inset: 10px;
-    }
-
-    .categoria-nome {
-        left: 20px;
-        right: 20px;
-        bottom: 18px;
-        font-size: 1.2rem;
-    }
-}
-
-/* =========================================
-   SEZIONE NOVITÀ
-   ========================================== */
-
+/* SEZIONE NOVITÀ */
 .novita {
     display: flex;
     align-items: center;
@@ -782,18 +675,20 @@ main {
 .novita-video {
     flex: 0 0 300px;
     max-height: 540px;
-    aspect-ratio: 9/16;
+    aspect-ratio: 9 / 16;
     border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
     border: 3px solid #C0A664;
 }
 
 .novita-video video,
-.novita-video iframe {
+.novita-video iframe,
+.novita-video img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
 }
 
 /* STRISCIA BRAND */
@@ -814,6 +709,11 @@ main {
     text-transform: uppercase;
     color: #C0A664;
     margin-bottom: 25px;
+}
+
+.brands-scroll {
+    width: 100%;
+    overflow: hidden;
 }
 
 .brands-track {
@@ -846,31 +746,18 @@ main {
     opacity: 0.85;
 }
 
-.brands-slide img.logo-piccolo {
-    height: 35px;
-}
-
-.brands-slide img.logo-medio {
-    height: 90px;
-}
-
-.brands-slide img.logo-grande {
-    height: 120px;
-}
-
-.brands-slide img.logo-xl {
-    height: 180px;
-}
-
-.brands-slide img.logo-xxl {
-    height: 240px;
-}
+.brands-slide img.logo-piccolo { height: 35px; }
+.brands-slide img.logo-medio { height: 90px; }
+.brands-slide img.logo-grande { height: 120px; }
+.brands-slide img.logo-xl { height: 180px; }
+.brands-slide img.logo-xxl { height: 240px; }
 
 @keyframes scroll-brands {
-    0%   { transform: translateX(0); }
+    0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
 }
 
+/* PAGINE CATEGORIA / PRODOTTI */
 .pagina-categoria,
 .pagina-prodotti {
     background: #f8f7f3;
@@ -995,40 +882,26 @@ main {
     color: #1f1f1f;
 }
 
-@media (max-width: 992px) {
-    .griglia-prodotti,
-    .tipi-prodotti {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 640px) {
-    .griglia-prodotti,
-    .tipi-prodotti {
-        grid-template-columns: 1fr;
-    }
-
-    .intro-categoria h1,
-    .top-prodotti h1 {
-        font-size: 2.2rem;
-    }
-
-    .hero-categoria img {
-        height: 220px;
-    }
-}
-
 /* =========================================
-   Scorrimento
+   RESPONSIVE
    ========================================== */
-html {
-    scroll-behavior: smooth;
-}
+@media (max-width: 1100px) {
+    .top-bar {
+        padding: 10px 20px;
+        gap: 16px;
+    }
 
-/* =========================================
-   RESPONSIVE FIXES FINALI
-   Da incollare in fondo al file
-   ========================================== */
+    .info-destra {
+        gap: 10px;
+    }
+
+    .telefono-header,
+    .btn-raggiungerci,
+    .btn-chi-siamo {
+        font-size: 0.9rem;
+        padding: 10px 14px;
+    }
+}
 
 @media (max-width: 992px) {
     .hero {
@@ -1052,11 +925,28 @@ html {
 
     .valori {
         padding: 50px 24px;
-        gap: 18px;
     }
 
     .valore {
-        padding: 0 24px;
+        padding: 0 26px;
+    }
+
+    .valore h3 {
+        min-height: 68px;
+    }
+
+    .valore p {
+        max-width: 17ch;
+    }
+
+    .categorie {
+        padding: 80px 20px 90px;
+    }
+
+    .categorie-griglia,
+    .griglia-prodotti,
+    .tipi-prodotti {
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .novita {
@@ -1076,41 +966,38 @@ html {
 
 @media (max-width: 768px) {
     .top-bar {
-        padding: 8px 12px;
-        min-height: 74px;
-        gap: 10px;
-        flex-wrap: nowrap;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        overflow: visible;
+        flex-wrap: nowrap;
+        gap: 6px;
+        padding: 8px 10px;
+        min-height: 68px;
+        overflow: hidden;
     }
 
     .logo-container {
-        width: auto;
-        justify-content: flex-start;
         display: flex;
         align-items: center;
+        justify-content: flex-start;
         flex: 0 0 auto;
-        margin-right: 0;
+        width: auto;
         min-width: 0;
     }
 
     .logo-img {
-        height: 50px;
+        height: 44px;
     }
 
     .info-destra {
         display: flex;
         align-items: center;
         justify-content: flex-end;
-        gap: 6px;
         flex-wrap: nowrap;
+        gap: 5px;
         width: auto;
         min-width: 0;
-        max-width: none;
         margin-left: auto;
-        overflow: visible;
     }
 
     .telefono-header span,
@@ -1120,43 +1007,36 @@ html {
 
     .telefono-header,
     .btn-raggiungerci {
-        width: 36px;
-        min-width: 36px;
-        height: 36px;
-        min-height: 36px;
+        width: 34px;
+        min-width: 34px;
+        height: 34px;
+        min-height: 34px;
         padding: 0;
-        flex-shrink: 0;
-        flex: 0 0 36px;
+        flex: 0 0 34px;
     }
 
     .btn-chi-siamo {
-        order: 0;
-        width: auto;
-        min-width: 120px;
-        height: 36px;
-        min-height: 36px;
-        padding: 0 14px;
-        font-size: 0.72rem;
-        font-weight: 700;
-        letter-spacing: 0;
-        flex: 0 0 auto;
-        white-space: nowrap;
-        border-radius: 999px;
-        background: rgba(255, 255, 255, 0.08);
-        border: 1px solid rgba(255, 255, 255, 0.22);
-        color: #ffffff;
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        max-width: none;
-        overflow: visible;
-        text-overflow: clip;
+        height: 34px;
+        min-height: 34px;
+        padding: 0 10px;
+        font-size: 0.68rem;
+        font-weight: 700;
         line-height: 1;
+        white-space: nowrap;
+        letter-spacing: 0;
+        border-radius: 999px;
+        flex: 0 1 auto;
+        min-width: 0;
+        max-width: 96px;
+        overflow: hidden;
+        text-overflow: clip;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.22);
+        color: #ffffff;
         box-shadow: none;
-    }
-
-    .btn-chi-siamo::after {
-        display: none;
     }
 
     .hero {
@@ -1193,25 +1073,16 @@ html {
     }
 
     .valori {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: stretch;
         padding: 30px 12px;
-        gap: 10px;
     }
 
     .valore {
-        flex: 1;
-        max-width: none;
-        min-width: 0;
-        padding: 18px 14px;
-        border-right: 1px solid #e0d8cc;
-        border-bottom: none;
+        padding: 0 10px;
     }
 
-    .valore:last-child {
-        border-right: none;
+    .valore::after {
+        top: 12px;
+        height: calc(100% - 24px);
     }
 
     .valore-icona {
@@ -1230,9 +1101,11 @@ html {
     .valore p {
         font-size: 0.84rem;
         line-height: 1.55;
+        max-width: 16ch;
     }
 
     .brands-strip {
+        overflow: hidden;
         padding: 28px 0 22px;
     }
 
@@ -1242,110 +1115,146 @@ html {
         margin-bottom: 18px;
     }
 
+    .brands-scroll {
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        cursor: grab;
+        width: 100%;
+    }
+
+    .brands-scroll::-webkit-scrollbar {
+        display: none;
+    }
+
+    .brands-track {
+        width: max-content;
+        animation: scroll-brands 40s linear infinite;
+    }
+
     .brands-slide {
         gap: 34px;
         padding: 0 18px;
+        flex-shrink: 0;
     }
 
-    .brands-slide img {
-        height: 42px;
-    }
-
-    .brands-slide img.logo-piccolo {
-        height: 26px;
-    }
-
-    .brands-slide img.logo-medio {
-        height: 58px;
-    }
-
-    .brands-slide img.logo-grande {
-        height: 78px;
-    }
-
-    .brands-slide img.logo-xl {
-        height: 108px;
-    }
-
-    .brands-slide img.logo-xxl {
-        height: 140px;
-    }
+    .brands-slide img { height: 42px; }
+    .brands-slide img.logo-piccolo { height: 26px; }
+    .brands-slide img.logo-medio { height: 58px; }
+    .brands-slide img.logo-grande { height: 78px; }
+    .brands-slide img.logo-xl { height: 108px; }
+    .brands-slide img.logo-xxl { height: 140px; }
 
     .categorie {
-        padding: 70px 16px 80px;
+        padding: 34px 10px 40px;
     }
 
     .categorie-titolo {
-        margin-bottom: 34px;
+        font-size: 1.35rem;
+        margin-bottom: 18px;
     }
 
     .categorie-griglia {
-        grid-template-columns: 1fr;
-        gap: 18px;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+        max-width: 100%;
     }
 
     .categoria-card {
-        aspect-ratio: 5 / 4;
-        border-radius: 12px;
+        aspect-ratio: 1 / 1.18;
+        border-radius: 8px;
+        min-height: 0;
     }
 
     .categoria-card::after {
-        inset: 10px;
+        inset: 6px;
+        border-radius: 6px;
     }
 
     .categoria-nome {
-        left: 18px;
-        right: 18px;
-        bottom: 18px;
-        font-size: 1.15rem;
+        left: 10px;
+        right: 10px;
+        bottom: 10px;
+        font-size: 0.78rem;
+        line-height: 1.12;
     }
 
     .novita {
-        flex-direction: column;
-        gap: 28px;
-        padding: 56px 18px;
-        text-align: center;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(132px, 36%);
+        align-items: center;
+        gap: 14px;
+        padding: 32px 14px;
+        background-color: #f9f6f1;
     }
 
     .novita-testo {
         max-width: 100%;
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .novita-tag {
+        display: inline-flex;
         align-items: center;
-        gap: 20px;
+        width: auto;
+        max-width: max-content;
+        padding: 6px 10px;
+        font-size: 0.66rem;
+        line-height: 1.1;
+        letter-spacing: 0.08em;
+        white-space: normal;
     }
 
     .novita-testo h2 {
-        font-size: 1.8rem;
-        line-height: 1.3;
+        font-size: 1rem;
+        line-height: 1.12;
+        margin: 0;
     }
 
     .novita-testo p {
-        font-size: 1rem;
-        line-height: 1.8;
+        font-size: 0.78rem;
+        line-height: 1.62;
+        margin: 0;
+        color: #666;
     }
 
     .novita-btn {
-        padding: 13px 22px;
-        font-size: 0.84rem;
+        padding: 9px 12px;
+        font-size: 0.68rem;
+        letter-spacing: 0.08em;
+        line-height: 1.1;
     }
 
     .novita-video {
-        width: min(100%, 320px);
+        width: 100%;
+        max-width: none;
+        margin-left: auto;
+        border: 2px solid #c6ab5a;
+        border-radius: 14px;
+        overflow: hidden;
+        background: transparent;
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
         flex: none;
         max-height: none;
     }
 
     .sezione-mappa {
-        margin: 28px auto;
-        padding: 0 16px;
+        padding: 28px 16px 34px;
     }
 
     .titolo-mappa {
         font-size: 1.8rem;
+        margin-bottom: 10px;
     }
 
     .sottotitolo-mappa {
         font-size: 1rem;
-        margin-bottom: 20px;
+        margin-bottom: 18px;
     }
 
     .contenitore-mappa iframe {
@@ -1353,47 +1262,71 @@ html {
     }
 
     .main-footer {
-        padding: 30px 18px 12px;
+        padding: 28px 14px 12px;
     }
 
     .footer-content {
-        flex-direction: column;
-        gap: 26px;
-        margin-bottom: 12px;
-    }
-
-    .footer-col {
-        flex: 1 1 auto;
+        grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+        gap: 12px;
     }
 
     .footer-col h3 {
+        font-size: 0.88rem;
+        line-height: 1.2;
         margin-bottom: 10px;
     }
 
-    .lista-allineata {
-        max-width: 100%;
-    }
-
     .lista-allineata li {
-        min-height: auto;
-        padding: 10px 0;
-        font-size: 0.92rem;
+        padding: 7px 0;
+        font-size: 0.76rem;
+        line-height: 1.35;
     }
 
     .riga-orari {
-        gap: 12px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1px;
+    }
+
+    .riga-orari span:first-child,
+    .riga-orari strong:first-child {
+        font-size: 0.76rem;
+    }
+
+    .riga-orari span:last-child,
+    .riga-orari strong:last-child {
+        text-align: left;
+        white-space: normal;
+        font-size: 0.72rem;
+        line-height: 1.3;
+    }
+
+    .main-footer a[href^="mailto:"] {
+        font-size: 0.66rem;
+        word-break: break-all;
+    }
+
+    .footer-bottom {
+        font-size: 0.68rem;
+        line-height: 1.4;
+        padding-top: 14px;
     }
 
     .storia-container {
         padding: 18px 20px;
     }
 
-    .titolo-storia {
-        font-size: clamp(3rem, 12vw, 4.2rem);
+    .titolo-storia,
+    .pagina-chi-siamo .titolo-storia {
+        font-size: clamp(2.9rem, 11.5vw, 3.8rem);
+        color: #c29626;
+        line-height: 1;
     }
 
-    .sottotitolo-storia {
+    .sottotitolo-storia,
+    .pagina-chi-siamo .sottotitolo-storia {
         font-size: clamp(2rem, 8vw, 2.6rem);
+        line-height: 1.08;
     }
 
     .storia-container p {
@@ -1471,45 +1404,6 @@ html {
 }
 
 @media (max-width: 480px) {
-    .top-bar {
-        padding: 8px 10px;
-        min-height: 68px;
-        gap: 8px;
-    }
-
-    .logo-container {
-        margin-right: 0;
-    }
-
-    .logo-img {
-        height: 44px;
-    }
-
-    .info-destra {
-        gap: 5px;
-        margin-left: auto;
-        overflow: visible;
-    }
-
-    .telefono-header,
-    .btn-raggiungerci {
-        width: 34px;
-        min-width: 34px;
-        height: 34px;
-        min-height: 34px;
-        flex: 0 0 34px;
-    }
-
-    .btn-chi-siamo {
-        min-width: 112px;
-        height: 34px;
-        min-height: 34px;
-        padding: 0 12px;
-        font-size: 0.66rem;
-        max-width: none;
-        overflow: visible;
-    }
-
     .hero {
         height: 68vh;
         min-height: 500px;
@@ -1530,11 +1424,15 @@ html {
 
     .valori {
         padding: 24px 6px;
-        gap: 6px;
     }
 
     .valore {
-        padding: 16px 8px;
+        padding: 0 8px;
+    }
+
+    .valore::after {
+        top: 10px;
+        height: calc(100% - 20px);
     }
 
     .valore-icona {
@@ -1546,11 +1444,30 @@ html {
         font-size: 0.7rem;
         line-height: 1.35;
         min-height: 40px;
+        margin-bottom: 8px;
     }
 
     .valore p {
         font-size: 0.72rem;
         line-height: 1.4;
+        max-width: 15ch;
+    }
+
+    .categorie {
+        padding: 30px 8px 34px;
+    }
+
+    .categorie-griglia {
+        gap: 6px;
+    }
+
+    .categoria-card {
+        aspect-ratio: 1 / 1.12;
+        border-radius: 7px;
+    }
+
+    .categoria-card::after {
+        inset: 5px;
     }
 
     .categorie-titolo,
@@ -1559,15 +1476,11 @@ html {
     }
 
     .categoria-nome {
-        font-size: 1.05rem;
-    }
-
-    .novita-testo h2 {
-        font-size: 1.55rem;
-    }
-
-    .novita-testo p {
-        font-size: 0.95rem;
+        left: 8px;
+        right: 8px;
+        bottom: 8px;
+        font-size: 0.68rem;
+        line-height: 1.1;
     }
 
     .contenitore-mappa iframe {
@@ -1576,11 +1489,6 @@ html {
 
     .griglia-prodotti {
         grid-template-columns: 1fr;
-    }
-
-    .footer-bottom {
-        font-size: 0.75rem;
-        line-height: 1.5;
     }
 }
 
@@ -1594,11 +1502,9 @@ html {
     }
 
     .btn-chi-siamo {
-        min-width: 104px;
-        font-size: 0.62rem;
-        padding: 0 10px;
-        max-width: none;
-        overflow: visible;
+        max-width: 92px;
+        font-size: 0.64rem;
+        padding: 0 9px;
     }
 
     .titolo-storia {
@@ -1608,41 +1514,39 @@ html {
     .sottotitolo-storia {
         font-size: 1.85rem;
     }
+
+    .novita {
+        grid-template-columns: minmax(0, 1fr) minmax(122px, 36%);
+        gap: 12px;
+        padding: 28px 12px;
+    }
+
+    .novita-tag {
+        padding: 6px 9px;
+        font-size: 0.62rem;
+        letter-spacing: 0.06em;
+    }
+
+    .novita-testo h2 {
+        font-size: 0.96rem;
+    }
+
+    .novita-btn {
+        padding: 8px 11px;
+        font-size: 0.64rem;
+    }
+
+    .novita-video {
+        border-radius: 12px;
+    }
 }
 
-.brands-scroll {
-    width: 100%;
-    overflow: hidden;
-}
-
-@media (max-width: 768px) {
-    .brands-strip {
-        overflow: hidden;
+@media (min-width: 414px) and (max-width: 768px) {
+    .novita {
+        grid-template-columns: minmax(0, 1fr) minmax(148px, 36%);
     }
 
-    .brands-scroll {
-        overflow-x: auto;
-        overflow-y: hidden;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
-        cursor: grab;
-        width: 100%;
-    }
-
-    .brands-scroll::-webkit-scrollbar {
-        display: none;
-    }
-
-    .brands-scroll:active {
-        cursor: grabbing;
-    }
-
-    .brands-track {
-        width: max-content;
-        animation: scroll-brands 40s linear infinite;
-    }
-
-    .brands-slide {
-        flex-shrink: 0;
+    .novita-testo h2 {
+        font-size: 1.08rem;
     }
 }
